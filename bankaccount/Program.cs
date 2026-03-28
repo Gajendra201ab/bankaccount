@@ -32,13 +32,16 @@ namespace bankaccount
                     int pin=int.Parse(Console.ReadLine());
                     while (p != pin)
                     {
+                        Console.WriteLine("you entered wrong pin");
                         Console.WriteLine("enter a pin");
                         pin = int.Parse(Console.ReadLine());
                         if (p == pin)
                         {
+
                             Console.WriteLine("enter amount to deposit");
                             int d = int.Parse(Console.ReadLine());
                             bal += d;
+                            Console.WriteLine("deposited sucessfully");
                             Console.WriteLine("total balance is" + bal);
                         }
                     }
@@ -46,13 +49,21 @@ namespace bankaccount
                     case 2:
                     Console.WriteLine("enter pin");
                     pin=int.Parse(Console.ReadLine());
-                    if (p == pin)
+                    while (p != pin)
                     {
-                        Console.WriteLine("enter amount to witdraw ");
-                        int w = int.Parse(Console.ReadLine());
-                        bal -= w;
+                        Console.WriteLine("you entered wrong pin");
+                        Console.WriteLine("enter a pin");
+                        pin = int.Parse(Console.ReadLine());
+
+                        if (p == pin)
+                        {
+                            Console.WriteLine("enter amount to witdraw ");
+                            int w = int.Parse(Console.ReadLine());
+                            bal -= w;
+                            Console.WriteLine("remaining balance"+bal);
+                        }
                     }
-                    else { Console.WriteLine("wrong pin"); }
+                    
                     break;
                     default:
                     Console.WriteLine("invalid option");
